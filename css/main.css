@@ -1121,3 +1121,55 @@ a:focus-visible, button:focus-visible { outline: 2px solid #00a550; outline-offs
 .wow {
   visibility: visible !important;
 }
+
+
+/* Estabilidade dos blocos da Home — mantém o visual original */
+.solucoes .wow,
+#novidade ~ .container .wow,
+#novidade ~ .bgTel .wow {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.slideGallery:not(.slick-initialized) {
+  display: flex !important;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.slideGallery:not(.slick-initialized) .itemGallery {
+  display: block !important;
+  flex: 0 0 calc(33.333% - 14px);
+}
+
+.slideGallery:not(.slick-initialized) .itemGallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .slideGallery:not(.slick-initialized) .itemGallery {
+    flex: 0 0 100%;
+  }
+}
+
+#banner .slick-list,
+#banner .slick-track,
+#banner .slick-slide,
+#banner .slick-slide > div {
+  height: 450px !important;
+  min-height: 450px !important;
+}
+
+@media (max-width: 980px) {
+  #banner .slick-list,
+  #banner .slick-track,
+  #banner .slick-slide,
+  #banner .slick-slide > div {
+    height: 331px !important;
+    min-height: 331px !important;
+  }
+}
