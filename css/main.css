@@ -162,8 +162,21 @@ main {
 }
 #banner .item {
   min-height: 450px;
+  height: 450px;
   position: relative;
   z-index: 1;
+}
+
+#banner .slick-list,
+#banner .slick-track,
+#banner .slick-slide,
+#banner .slick-slide > div {
+  min-height: 450px;
+  height: 450px;
+}
+
+#banner .slick-slide > div {
+  position: relative;
 }
 .banner0 {
   background: url(../img/banners/0.jpg) center top no-repeat;
@@ -729,8 +742,17 @@ footer {
   }
   #banner .item {
     min-height: 331px;
+    height: 331px;
     position: relative;
     z-index: 1;
+  }
+
+  #banner .slick-list,
+  #banner .slick-track,
+  #banner .slick-slide,
+  #banner .slick-slide > div {
+    min-height: 331px;
+    height: 331px;
   }
   .textBanner {
     color: white;
