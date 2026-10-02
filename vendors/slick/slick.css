@@ -127,7 +127,7 @@
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=1 * 100);
   filter: alpha(opacity=1 * 100);
 }
-.animated {
+#banner .animated {
   -moz-opacity: 0;
   -khtml-opacity: 0;
   -webkit-opacity: 0;
