@@ -471,7 +471,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       document.documentElement.scrollTop = 0;
     }
     </script>
-    <script>new WOW().init();</script>
     <script>
     $(document).ready(function(){
       $('#banner').on('init', function(event, slick){
@@ -566,5 +565,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
          
    </script>
+    <script>
+    // Inicializa as animações originais por último, sem bloquear banner e galeria.
+    try {
+      new WOW().init();
+    } catch (e) {
+      document.querySelectorAll('.wow').forEach(function(el) {
+        el.style.visibility = 'visible';
+        el.style.opacity = '1';
+      });
+      console.warn('WOW não pôde ser inicializado:', e);
+    }
+    </script>
   </body>
 </html>
