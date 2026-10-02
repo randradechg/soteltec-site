@@ -1090,3 +1090,7 @@ html, body, div, span, applet, object, iframe,
   width: 100%;
   height: 100%;
 }
+/* Compatibilidade: impede o WOW de deixar as seções invisíveis quando a animação não dispara. */
+.wow {
+  visibility: visible !important;
+}
