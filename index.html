@@ -467,7 +467,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       document.documentElement.scrollTop = 0;
     }
     </script>
-    <script>new WOW().init();</script>
+    <script>
+    $(function () {
+      if (window.WOW) {
+        try { new WOW().init(); } catch (e) { console.warn('WOW desativado:', e); }
+      }
+    });
+    </script>
     <script>
     $(document).ready(function(){
       $('#banner').on('init', function(event, slick){
@@ -516,7 +522,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     });
    </script>
-   <script defer>$(".js-modal-btn").modalVideo();</script>
+   <script>
+   $(function () {
+     if ($.fn.modalVideo && $(".js-modal-btn").length) {
+       $(".js-modal-btn").modalVideo();
+     }
+   });
+   </script>
    <script>
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -552,24 +564,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    </script>
 
    <script>
-    $('.slideGallery').slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: true
+    if ($.fn.slick && $('.slideGallery').length) {
+      $('.slideGallery').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        arrows: false,
+        dots: true,
+        responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: true
+          }
         }
-      }
-      ]
-    });
+        ]
+      });
+    }
          
    </script>
   </body>
