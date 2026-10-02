@@ -448,7 +448,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script src="vendors/slick/slick.js"></script>
     <script src="vendors/videomodal/js/jquery-modal-video.min.js"></script>
     <script src="js/wow.js"></script>
-    <script src="js/popup.js"></script>
     
     <script src="js/lightbox.min.js"></script>
     <script>
@@ -521,9 +520,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <script>
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+        const targetId = this.getAttribute('href');
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
+        if (!targetId || targetId === '#') {
+            return;
+        }
+
+        const target = document.querySelector(targetId);
+        if (!target) {
+            return;
+        }
+
+        e.preventDefault();
+        target.scrollIntoView({
             behavior: 'smooth'
         });
     });
